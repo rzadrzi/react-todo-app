@@ -8,11 +8,28 @@ export const Form: React.FunctionComponent<any> = ({
   const [name, setName] = React.useState<any>("");
   const [description, setDescription] = React.useState<any>("");
 
+  // React.useEffect(() => {
+  //   console.log(search);
+  // }, [search]);
+
   const onSubmit = (e: any) => {
-    setSearch([...search, { name: name, description: description }]);
-    // event.preventDefault();
-    // console.log(e);
+    return setSearch([...search, { name: name, description: description }]);
+    // if (search.length > 0) {
+    //   search.find((el: any) => {
+    //     if (el.name === name) {
+    //       return search;
+    //     } else {
+    //       return setSearch([
+    //         ...search,
+    //         { name: name, description: description },
+    //       ]);
+    //     }
+    //   });
+    // } else {
+    //   return setSearch([...search, { name: name, description: description }]);
+    // }
   };
+
   return (
     <div className="reza-form form-group">
       <div className="mb-3 ">
