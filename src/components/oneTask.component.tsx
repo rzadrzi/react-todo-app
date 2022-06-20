@@ -3,12 +3,8 @@ import "./oneTask.component";
 
 export const OneTask = ({ props, search, setSearch }: any) => {
   const delTask = (e: any) => {
-    let results = search.find((el: any) => {
-      return el.name === props.name;
-    });
-
     let del = search.filter((el: any) => {
-      return el !== results;
+      return el !== props;
     });
     setSearch(del);
   };
