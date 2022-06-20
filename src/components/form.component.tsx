@@ -13,21 +13,19 @@ export const Form: React.FunctionComponent<any> = ({
   // }, [search]);
 
   const onSubmit = (e: any) => {
-    return setSearch([...search, { name: name, description: description }]);
-    // if (search.length > 0) {
-    //   search.find((el: any) => {
-    //     if (el.name === name) {
-    //       return search;
-    //     } else {
-    //       return setSearch([
-    //         ...search,
-    //         { name: name, description: description },
-    //       ]);
-    //     }
-    //   });
-    // } else {
-    //   return setSearch([...search, { name: name, description: description }]);
-    // }
+    if (search.length > 0) {
+      let results = search.find((el: any) => {
+        return el.name === name;
+      });
+
+      if (!results) {
+        return setSearch([...search, { name: name, description: description }]);
+      } else {
+        return search;
+      }
+    } else {
+      return setSearch([...search, { name: name, description: description }]);
+    }
   };
 
   return (
