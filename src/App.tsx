@@ -1,12 +1,11 @@
 import React from "react";
 import "./App.scss";
 import { Form } from "./components/form.component";
-// import { OneTask } from "./components/oneTask.component";
+import { OneTask } from "./components/oneTask.component";
 
 type Task = {
   name: string;
   description: string;
-  //   is_complete: boolean;
 };
 
 function App() {
@@ -18,8 +17,8 @@ function App() {
 
   return (
     <div className="App container">
-      <Form setSearch={setSearch} search={search} />
-      {/* <OneTask /> */}
+      {/* <Form setSearch={setSearch} search={search} /> */}
+      <OneTask name="sdsf" description="sfsdgsdgdsgdsgdgf" />
     </div>
   );
 }
