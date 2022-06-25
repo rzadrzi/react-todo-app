@@ -1,7 +1,14 @@
 $myColor: #282c34;
-body{
-    background-color:$myColor;
+body {
+  background-color: $myColor;
 }
 .App {
   text-align: center;
+  padding: 50px;
+  padding-top: 50px;
+}
+
+.form-control {
+  margin: top 40px;
+  // max-width: 500px;
 }

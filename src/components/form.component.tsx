@@ -2,25 +2,25 @@ import React from "react";
 import "./form.component.scss";
 
 export const Form: React.FunctionComponent<any> = ({
-  setSearch,
-  search,
+  tasks,
+  setTasks,
 }: any) => {
   const [name, setName] = React.useState<any>("");
   const [description, setDescription] = React.useState<any>("");
 
   const onSubmit = (e: any) => {
-    if (search.length > 0) {
-      let results = search.find((el: any) => {
+    if (tasks.length > 0) {
+      let results = tasks.find((el: any) => {
         return el.name === name;
       });
 
       if (!results) {
-        return setSearch([...search, { name: name, description: description }]);
+        return setTasks([...tasks, { name: name, description: description }]);
       } else {
-        return search;
+        return tasks;
       }
     } else {
-      return setSearch([...search, { name: name, description: description }]);
+      return setTasks([...tasks, { name: name, description: description }]);
     }
   };
 

@@ -9,16 +9,16 @@ type Task = {
 };
 
 function App() {
-  const [search, setSearch] = React.useState<Task[]>([]);
+  const [tasks, setTaskes] = React.useState<Task[]>([]);
 
   React.useEffect(() => {
     // console.log(search);
-  }, [search]);
+  }, [tasks]);
 
   return (
     <div className="App container">
-      <Form setSearch={setSearch} search={search} />
-      <ListTask setSearch={setSearch} search={search} />
+      <Form tasks={tasks} setTaskes={setTaskes} />
+      <ListTask tasks={tasks} setTaskes={setTaskes} />
     </div>
   );
 }
