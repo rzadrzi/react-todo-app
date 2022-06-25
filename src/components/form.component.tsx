@@ -1,10 +1,7 @@
 import React from "react";
 import "./form.component.scss";
 
-export const Form: React.FunctionComponent<any> = ({
-  tasks,
-  setTasks,
-}: any) => {
+export const Form: React.FunctionComponent<any> = ({ tasks, setTasks }: any) => {
   const [name, setName] = React.useState<any>("");
   const [description, setDescription] = React.useState<any>("");
 

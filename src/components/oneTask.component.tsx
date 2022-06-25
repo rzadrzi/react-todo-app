@@ -1,21 +1,23 @@
 import React from "react";
 import "./oneTask.component";
 
-export const OneTask = ({ props, search, setSearch }: any) => {
+export const OneTask = ({ props, tasks, setTasks }: any) => {
   const delTask = (e: any) => {
-    let del = search.filter((el: any) => {
-      return el !== props;
-    });
-    setSearch(del);
+    if (Array.isArray(tasks)) {
+      let del = tasks.filter((el: any) => el.name !== props.name);
+      setTasks(del);
+    } else {
+      console.error("arr is not an array");
+    }
   };
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card" style={{ width: "25rem" }}>
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         <p className="card-text">{props.description}</p>
-        <a href="#" className="btn btn-primary" onClick={delTask}>
+        <button className="btn btn-primary" onClick={delTask}>
           Completed
-        </a>
+        </button>
       </div>
     </div>
   );

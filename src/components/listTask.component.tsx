@@ -7,7 +7,7 @@ export const ListTask = ({ tasks, setTasks }: any) => {
     <div className="list">
       {tasks.map((el: any) => {
         return (
-          <OneTask props={el} search={tasks} setSearch={setTasks} key={el.id} />
+          <OneTask props={el} tasks={tasks} setTasks={setTasks} key={el.id} />
         );
       })}
     </div>
