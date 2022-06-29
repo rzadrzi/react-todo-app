@@ -17,9 +17,8 @@ function App() {
 
   return (
     <div className="App container">
-      <button className="btn btn-primary">+ Add New Task</button>
-
       <Form tasks={tasks} setTasks={setTasks} />
+      <hr />
       <ListTask tasks={tasks} setTasks={setTasks} />
     </div>
   );
